@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish for My Best Friend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="petals" id="petalsContainer"></div>
+
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="step" id="step1">
+            <h1>Happy Birthday, Bestie! 🎉</h1>
+
+
+
+            <p>I made something special just for you.</p>
+            <p>Because some people deserve extra effort — and that’s you 💫</p>
+            <img src="https://png.pngtree.com/png-vector/20250422/ourmid/pngtree-cute-girl-holding-birthday-cake-smiling-cheerfully-png-image_16067658.png"
+                 style="height:200px;width:200px;" alt="">
+            <button class="btn" onclick="nextStep()">Let’s Start 💖</button>
+        </div>
+
+        <!-- Step 2 
+        <div class="step" id="step2">
+            <h2>Make It Yours</h2>
+            <p>Tell me the name of the girl who makes everything brighter just by being herself ✨</p>
+            <input type="text" class="name-input" id="nameInput" placeholder="Enter your name">
+            <button class="btn" onclick="saveName()">Continue</button>
+        </div> -->
+
+        <!-- Step 2: Name Input  
+<div class="step" id="step2">
+    <h2>Just One Little Thing… ✨</h2>
+    <p>
+        Before we go ahead,  
+        I want to say your name —  
+        because some names feel like comfort 🤍
+    </p>
+    <p style="font-size:14px; opacity:0.85;">
+        Go on… type it slowly 🌙
+    </p>
+    <input type="text" class="name-input" id="nameInput" placeholder="Your beautiful name here">
+    <button class="btn" onclick="saveName()">Continue 🌷</button>
+</div>   -->
+
+<div class="step" id="step2">
+    <h2>Just One Little Thing… ✨</h2>
+    <p>
+        I don’t need to ask your name 🤍  
+        You already know who this is for.
+    </p>
+    <p style="font-size:14px; opacity:0.85;">
+        My favorite human, this is all yours 🌷
+    </p>
+    <button class="btn" onclick="saveName()">Continue 💫</button>
+</div>
+
+    
+
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <h2>Hey <span id="displayName">Mitali</span> 💕</h2>
+            <p>Tap the heart — it’s filled with good vibes just for you!</p>
+            <div class="heart" id="interactiveHeart" onclick="createHearts()"></div>
+            <div id="heartMessage" class="message-box">
+                 <p>
+    You turn ordinary moments into memories I’ll never forget ✨,  
+     <span id="heartName">bestie</span> 💛
+</p>
+            </div>
+            <button class="btn" onclick="nextStep()">Keep Going 🌷</button>
+        </div>  
+
+
+
+        <!-- Step 4 -->
+        <div class="step" id="step4">
+            <h2>A Little Note From Me</h2>
+            <div class="photo-frame">
+                <img src="C:\Users\DI1359\Downloads\birthday-v6-main\photos\im1.jpeg"
+                     alt="You Being You">
+            </div>
+            <div id="typedMessage" class="message-box">
+                <p class="typing-effect" id="typingText"></p>
+            </div>
+            <button class="btn" onclick="nextStep()">One More Surprise 🎁</button>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step" id="step5">
+            <h2>Moments I Appreciate</h2>
+            <p>The little memories that mean more than you realize…</p>
+            <div class="memory-container">
+                <div class="polaroid">
+                    <img src="C:\Users\DI1359\Downloads\birthday-v6-main\photos\im2_both.jpeg">
+                    <div class="polaroid-caption">Laughing for No Reason</div>
+                </div>
+                <div class="polaroid">
+                    <img src="C:\Users\DI1359\Downloads\birthday-v6-main\photos\im3_both.jpeg">
+                    <div class="polaroid-caption">Random Conversations</div>
+                </div>
+                
+            </div>
+            <button class="btn" onclick="nextStep()">Final Page ✨</button>
+        </div>
+
+        <!-- Step 6 -->
+       <div class="step" id="step6" style="line-height: 1.6; font-family: 'Segoe UI', sans-serif; color: #333; padding: 20px; max-width: 700px; margin: 0 auto;">
+
+    <h1 style="text-align:center; font-size: 2.2em; margin-bottom: 20px;">
+        🎂 Happy Birthday, <span id="finalName">Bestie 💖</span> 🎉
+    </h1>
+
+    <div style="
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.15em;
+    margin-top: 10px;
+    line-height: 1.9;
+    color: #444;
+    letter-spacing: 0.2px;
+">
+
+    <p style="margin: 18px 0; font-family: 'Dancing Script', cursive;">
+        Some people come into our lives and leave footprints on our hearts.  
+        Some people stay… and make those footprints permanent.  
+        You, my dear, are one of those people 🌷✨
+    </p>
+
+    <p style="margin: 18px 0;">
+        Even though miles separate us 🌍, I feel you right here with me.  
+        Through the laughter 😂, the tears 😢, the overthinking 🤯, and the silly jokes 🤪…  
+        you’ve been my constant.  
+        You’ve seen my good moods 😄, my quiet moods 🤫, my messy thoughts 🌀,  
+        and still, you stayed — that alone says so much 💞
+    </p>
+
+    <p style="margin: 18px 0;">
+        I want you to know:  
+        <strong style="color:#e91e63;">I am always here for you</strong>, no matter what 💖  
+        Through every laugh, every tear, every random moment,  
+        and every crazy thought 🌸
+    </p>
+
+    <p style="margin: 18px 0;">
+        I hope this day and the year ahead bring you:<br>
+        ✨ Happiness that feels light<br>
+        ✨ Adventures that make your heart race 🎢<br>
+        ✨ Love that surrounds you 💕<br>
+        ✨ Memories that make you smile every single day 😍
+    </p>
+
+    <p style="margin: 18px 0;">
+        Thank you for being YOU —  
+        amazing, silly, loving,  
+        and the best friend anyone could ask for 🌟  
+        If you’re smiling while reading this 😌…  
+        then mission accomplished 💖
+    </p>
+
+    <p style="margin: 20px 0; font-family: 'Dancing Script', cursive; font-size: 1.2em;">
+        Happy Birthday, my favorite human 🎉🎈
+    </p>
+
+</div>
+
+    <div class="signature" style="margin-top: 30px; font-size: 1.2em; font-style: italic; text-align: right;">
+        — Your Best Friend 🤍
+    </div>
+
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
