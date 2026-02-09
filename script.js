@@ -177,7 +177,7 @@ function showStep(step) {
             // Animate polaroids
             gsap.from(".polaroid", {
                 y: 100,
-                opacity: 0,
+                opacity: 2,
                 stagger: 0.2,
                 duration: 1,
                 ease: "back.out(1.7)"
